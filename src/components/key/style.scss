@@ -1,0 +1,110 @@
+:root {
+  --border-color: #23291c;
+  --face-main-color: #818050;
+  --face-shadow-color: #717146;
+  --side-main-color: #3e4831;
+  --side-light-color: #505d3f;
+  --face-main-color-hover: #64643e;
+  --face-shadow-color-hover: #565635;
+  --side-main-color-hover: #313927;
+  --side-light-color-hover: #414b33;
+}
+
+.key {
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 5px;
+    width: 50px;
+    height: 50px;
+    font-family: "Cutive Mono";
+    font-size: 1.15em;
+    background-color: #313927;
+    box-shadow: 5px 5px 1px black;
+    background: conic-gradient(
+      at 50% 20px,
+      var(--side-main-color) 0deg 45deg,
+      var(--side-main-color) 45deg,
+      var(--side-light-color) 55deg,
+      var(--side-main-color) 65deg 130deg,
+      var(--side-main-color) 130deg,
+      var(--side-light-color) 141deg,
+      var(--side-main-color) 151deg 207deg,
+      var(--side-main-color) 207deg,
+      var(--side-light-color) 218deg,
+      var(--side-main-color) 227deg 290deg,
+      var(--side-main-color) 290deg,
+      var(--side-light-color) 305deg,
+      var(--side-main-color) 315deg
+    );
+    border-radius: 5px;
+    border: 2px solid var(--border-color);
+
+    &:hover {
+      background: conic-gradient(
+        at 50% 20px,
+        var(--side-main-color-hover) 0deg 45deg,
+        var(--side-main-color-hover) 45deg,
+        var(--side-light-color-hover) 55deg,
+        var(--side-main-color-hover) 65deg 130deg,
+        var(--side-main-color-hover) 130deg,
+        var(--side-light-color-hover) 141deg,
+        var(--side-main-color-hover) 151deg 207deg,
+        var(--side-main-color-hover) 207deg,
+        var(--side-light-color-hover) 218deg,
+        var(--side-main-color-hover) 227deg 290deg,
+        var(--side-main-color-hover) 290deg,
+        var(--side-light-color-hover) 305deg,
+        var(--side-main-color-hover) 315deg
+      );
+      box-shadow: white 1px 1px 5px;
+      .key__face {
+        color: white;
+        text-shadow: white 1px 1px 3px;
+        background: linear-gradient(
+          to right,
+          var(--face-shadow-color-hover),
+          var(--face-main-color-hover) 35%,
+          var(--face-shadow-color-hover) 90%
+        );
+        transform: scale(0.95, 0.95);
+      }
+
+      .key__text {
+        transform: scale(0.93, 0.93);
+      }
+    }
+  }
+
+  &__face {
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    text-align: center;
+    padding: 5px 0 0;
+    background-color: #818050;
+    background: linear-gradient(
+      to right,
+      var(--face-shadow-color),
+      var(--face-main-color) 35%,
+      var(--face-shadow-color) 90%
+    );
+    box-sizing: border-box;
+    transition: transform 0.1s;
+  }
+
+  &__text {
+    margin: 0;
+    transition: transform 0.1s;
+  }
+}
+
+@keyframes pressKey {
+  from {
+    transform: scale(1, 1);
+  }
+  to {
+    transform: translate(0.7, 0.7);
+  }
+}

@@ -1,0 +1,16 @@
+.textarea {
+  &__container {
+    // background-color: rgba(0, 0, 0, 0.7);
+
+    border: 20px solid rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+  }
+
+  &__input {
+    width: 600px;
+    height: 200px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-style: none;
+    overflow-y: scroll;
+  }
+}

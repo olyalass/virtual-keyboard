@@ -1,0 +1,10 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-image: url("../assets/images/road.jpg");
+  background-size: auto cover;
+  background-position: top center;
+  background-repeat: no-repeat;
+}

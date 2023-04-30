@@ -1,0 +1,10 @@
+.keyboard {
+  &__container {
+    display: flex;
+    padding: 20px;
+    background-image: url("../../../assets/images/board.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 5px;
+  }
+}

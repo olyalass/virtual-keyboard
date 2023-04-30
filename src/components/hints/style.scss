@@ -1,0 +1,38 @@
+.hints {
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 40px;
+    width: 400px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+  }
+
+  &__title {
+    margin: 0;
+    text-align: center;
+    color: white;
+    font-family: "Cutive Mono";
+    text-transform: uppercase;
+  }
+
+  &__list {
+    margin: 0;
+    font-family: "Anonymous Pro";
+    font-weight: 700;
+    color: white;
+    padding-left: 0;
+    list-style: none;
+  }
+
+  &__item {
+    font-family: "Cutive Mono";
+    padding-left: 15px;
+  }
+
+  &__span {
+    font-family: "Anonymous Pro";
+    font-weight: 700;
+  }
+}
