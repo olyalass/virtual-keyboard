@@ -13,6 +13,7 @@
     border-bottom-right-radius: 0;
     border-top-right-radius: 0;
     transition: transform 0.8s ease-in-out;
+    user-select: none;
 
     &_open {
       transform: translateY(60vh);

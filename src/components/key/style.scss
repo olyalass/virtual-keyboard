@@ -442,6 +442,7 @@
     );
     box-sizing: border-box;
     transition: transform 0.2s;
+    user-select: none;
 
     &_on {
       color: white !important;

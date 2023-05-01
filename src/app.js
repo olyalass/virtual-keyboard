@@ -31,32 +31,62 @@ export class App {
     );
 
     this.container.addEventListener("custom-key", (e) => {
-      if (e.detail.isCaps !== undefined) {
-        this.isCaps = e.detail.isCaps;
-        this.keyboard.changeNames(this.isCaps, this.lang);
-      }
-      this.textarea.addChar(e.detail.obj, this.isCaps, this.lang);
+      this.onVirtualKey(e.detail.isCaps, e.detail.obj);
     });
 
     document.addEventListener("keydown", (event) => {
-      const virtualKey = this.keyboard.keysArr.find(
+      let virtualKey = this.keyboard.keysArr.find(
         (e) => e.obj.code === event.code
       );
-      virtualKey.container.classList.add("key__container_clicked");
-      if (
-        (event.ctrlKey && event.metaKey) ||
-        (event.shiftKey && event.code === "Space")
-      ) {
-        event.preventDefault();
-        this.changeLang();
+      if (event.code === "ShiftRight") {
+        virtualKey = this.keyboard.keysArr.find(
+          (e) => e.obj.code === "ShiftLeft"
+        );
+      }
+      if (virtualKey) {
+        virtualKey.container.classList.add("key__container_clicked");
+        if (
+          (event.ctrlKey && event.metaKey) ||
+          (event.shiftKey && event.code === "Space")
+        ) {
+          event.preventDefault();
+          this.changeLang();
+        }
+        if (event.code !== "ArrowUp" && event.code !== "ArrowDown") {
+          event.preventDefault();
+          this.onVirtualKey(virtualKey.isCaps, virtualKey.obj);
+        }
+        if (event.code === "CapsLock") {
+          virtualKey.container.click();
+        }
+        if (event.code === "ShiftLeft" || event.code === "ShiftRight") {
+          this.isCaps
+            ? this.onVirtualKey(false, virtualKey.obj)
+            : this.onVirtualKey(true, virtualKey.obj);
+        }
       }
     });
 
     document.addEventListener("keyup", (event) => {
-      const virtualKey = this.keyboard.keysArr.find(
+      let virtualKey = this.keyboard.keysArr.find(
         (e) => e.obj.code === event.code
       );
-      virtualKey.container.classList.remove("key__container_clicked");
+      if (event.code === "ShiftRight") {
+        virtualKey = this.keyboard.keysArr.find(
+          (e) => e.obj.code === "ShiftLeft"
+        );
+      }
+      if (virtualKey) {
+        virtualKey.container.classList.remove("key__container_clicked");
+        if (event.code === "CapsLock") {
+          virtualKey.container.click();
+        }
+        if (event.code === "ShiftLeft" || event.code === "ShiftRight") {
+          this.isCaps
+            ? this.onVirtualKey(false, virtualKey.obj)
+            : this.onVirtualKey(true, virtualKey.obj);
+        }
+      }
     });
   }
 
@@ -64,5 +94,13 @@ export class App {
     this.lang === "eng" ? (this.lang = "hr") : (this.lang = "eng");
     this.footer.onLangChange(this.lang);
     this.keyboard.changeNames(this.isCaps, this.lang);
+  }
+
+  onVirtualKey(isCaps, obj) {
+    if (isCaps !== undefined) {
+      this.isCaps = isCaps;
+      this.keyboard.changeNames(this.isCaps, this.lang);
+    }
+    this.textarea.addChar(obj, this.isCaps, this.lang);
   }
 }
