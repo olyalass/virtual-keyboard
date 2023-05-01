@@ -39,7 +39,7 @@ export default class Key {
       } else this.container.classList.add('key__container_event')
     }
 
-    this.container.addEventListener('click', () => {
+    this.container.addEventListener('mousedown', () => {
       this.container.classList.add('key__container_clicked')
       this.container.classList.add('key__face_clicked')
       if (keyObj.code === 'CapsLock') {
@@ -50,10 +50,12 @@ export default class Key {
         detail: { obj: keyObj, isCaps: this.isCaps },
       })
       this.container.dispatchEvent(event)
+    })
+    this.container.addEventListener('mouseup', () => {
       setTimeout(() => {
         this.container.classList.remove('key__container_clicked')
         this.container.classList.remove('key__face_clicked')
-      }, 300)
+      }, 100)
     })
   }
 

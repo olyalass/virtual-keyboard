@@ -1,11 +1,6 @@
 import './style.scss'
 
 export default class Footer {
-  // item
-  // lang = 'eng'
-  // croat
-  // eng
-
   constructor() {
     this.item = document.createElement('footer')
     this.item.classList.add('footer')

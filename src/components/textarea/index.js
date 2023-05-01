@@ -39,6 +39,15 @@ export default class Textarea {
         this.input.value.slice(this.cursor)
       this.cursor += 1
     } else {
+      if (keyInfo.code === 'ArrowUp') {
+        this.setCursorUp()
+      }
+      if (keyInfo.code === 'ArrowDown') {
+        this.setCursorDown()
+      }
+
+      this.setFocus()
+
       if (keyInfo.code === 'Backspace') {
         this.input.value =
           this.input.value.slice(0, this.cursor - 1) +
@@ -53,14 +62,6 @@ export default class Textarea {
       } else if (keyInfo.code === 'ArrowRight') {
         this.moveCursor('right')
       }
-
-      this.setFocus()
-
-      if (keyInfo.code === 'ArrowUp') {
-        this.setCursorUp()
-      } else if (keyInfo.code === 'ArrowDown') {
-        this.setCursorDown()
-      }
     }
   }
 
@@ -70,12 +71,16 @@ export default class Textarea {
     if (gap >= 95 || (lineStart === -1 && this.input.value.length > 95)) {
       this.cursor -= 95
     } else {
-      const prevLineStart = this.input.value.lastIndexOf('\n', lineStart - 1)
-      const prevLineLength = lineStart - prevLineStart
-      if (prevLineLength < gap) {
-        this.cursor = lineStart
+      if (lineStart === -1) {
+        this.cursor = 0
       } else {
-        this.cursor = prevLineStart + gap
+        const prevLineStart = this.input.value.lastIndexOf('\n', lineStart - 1)
+        const prevLineLength = lineStart - prevLineStart
+        if (prevLineLength < gap) {
+          this.cursor = lineStart
+        } else {
+          this.cursor = prevLineStart + gap
+        }
       }
     }
 
