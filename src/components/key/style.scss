@@ -8,9 +8,9 @@
   --face-shadow-color-hover: #565635;
   --side-main-color-hover: #313927;
   --side-light-color-hover: #414b33;
-  --face-main-color-event: #303030;
+  --face-main-color-event: #393939;
   --face-main-color-event-hover: #222222;
-  --face-shadow-color-event: #2b2b2b;
+  --face-shadow-color-event: #323232;
   --face-shadow-color-event-hover: #202020;
   --side-main-color-event: #181818;
   --side-main-color-event-hover: #141414;
@@ -201,7 +201,7 @@
       );
 
       .key__face {
-        color: rgb(106, 106, 106);
+        color: rgb(25, 25, 25);
         background: linear-gradient(
           to right,
           var(--face-shadow-color-event),
@@ -387,7 +387,7 @@
       );
 
       .key__face {
-        color: #6f3702;
+        color: #7c5127;
         background: linear-gradient(
           to right,
           var(--face-shadow-color-arrow),
