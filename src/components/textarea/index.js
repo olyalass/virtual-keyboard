@@ -6,9 +6,7 @@ export class Textarea {
 
   constructor() {
     this.container = document.createElement("div");
-    this.container.classList.add("textarea__container");
-    this.input = document.createElement("input");
-    this.input.setAttribute("type", "textarea");
+    this.input = document.createElement("textarea");
     this.input.classList.add("textarea__input");
     this.container.append(this.input);
   }

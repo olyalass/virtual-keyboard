@@ -14,7 +14,10 @@ export class Hints {
     list.classList.add("hints__list");
     this.createListItem("For Mac: ", "⌘ Command + ⎵ Space", list);
     this.createListItem("For Windows: ", "⎇ Alt + ⇧ Shift", list);
-    this.container.append(title, list);
+    const text = document.createElement("p");
+    text.classList.add("hints__text");
+    text.textContent = "Keyboard was made on Mac OS";
+    this.container.append(title, list, text);
   }
 
   createListItem(firstText, secondText, container) {
@@ -24,7 +27,6 @@ export class Hints {
     span.classList.add("hints__span");
     span.textContent = firstText;
     const text = document.createElement("p");
-    text.classList.add("hints__text");
     text.textContent = secondText;
     item.append(text);
     text.prepend(span);
