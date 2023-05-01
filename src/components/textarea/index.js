@@ -8,6 +8,7 @@ export class Textarea {
   constructor() {
     this.container = document.createElement("div");
     this.input = document.createElement("textarea");
+    this.input.setAttribute("spellcheck", false);
     this.input.classList.add("textarea__input");
     this.container.append(this.input);
 
@@ -52,8 +53,60 @@ export class Textarea {
       } else if (keyInfo.code === "ArrowRight") {
         this.moveCursor("right");
       }
+
+      this.setFocus();
+
+      if (keyInfo.code === "ArrowUp") {
+        this.setCursorUp();
+      } else if (keyInfo.code === "ArrowDown") {
+        this.setCursorDown();
+      }
     }
-    this.setFocus();
+  }
+
+  setCursorUp() {
+    const lineStart = this.input.value.lastIndexOf("\n", this.cursor - 1);
+    const gap = this.cursor - lineStart;
+    if (gap >= 95 || (lineStart === -1 && this.input.value.length > 95)) {
+      this.cursor -= 95;
+    } else {
+      console.log(gap);
+      const prevLineStart = this.input.value.lastIndexOf("\n", lineStart - 1);
+      const prevLineLength = lineStart - prevLineStart;
+      console.log(prevLineLength);
+      if (prevLineLength < gap) {
+        this.cursor = lineStart;
+      } else {
+        this.cursor = prevLineStart + gap;
+      }
+    }
+
+    this.input.setSelectionRange(this.cursor, this.cursor);
+  }
+
+  setCursorDown() {
+    const lineStart = this.input.value.lastIndexOf("\n", this.cursor - 1);
+    const gap = this.cursor - lineStart;
+    const nextLineStart = this.input.value.indexOf("\n", lineStart + 1);
+    if (gap >= 95 || (lineStart === -1 && this.input.value.length > 95)) {
+      this.cursor += 95;
+    } else {
+      if (nextLineStart === -1) {
+        this.cursor = this.input.value.length;
+      } else {
+        let afterNextLine = this.input.value.indexOf("\n", nextLineStart + 1);
+        if (afterNextLine === -1) {
+          afterNextLine = this.input.value.length;
+        }
+        const nextLineLength = afterNextLine - nextLineStart;
+        if (nextLineLength < gap) {
+          this.cursor = nextLineStart + nextLineLength;
+        } else {
+          this.cursor = nextLineStart + gap;
+        }
+      }
+    }
+    this.input.setSelectionRange(this.cursor, this.cursor);
   }
 
   setFocus() {
