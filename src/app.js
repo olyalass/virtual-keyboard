@@ -39,6 +39,10 @@ export class App {
     });
 
     document.addEventListener("keydown", (event) => {
+      const virtualKey = this.keyboard.keysArr.find(
+        (e) => e.obj.code === event.code
+      );
+      virtualKey.container.classList.add("key__container_clicked");
       if (
         (event.ctrlKey && event.metaKey) ||
         (event.shiftKey && event.code === "Space")
@@ -46,6 +50,13 @@ export class App {
         event.preventDefault();
         this.changeLang();
       }
+    });
+
+    document.addEventListener("keyup", (event) => {
+      const virtualKey = this.keyboard.keysArr.find(
+        (e) => e.obj.code === event.code
+      );
+      virtualKey.container.classList.remove("key__container_clicked");
     });
   }
 

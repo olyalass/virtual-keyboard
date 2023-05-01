@@ -4,6 +4,7 @@ import keys from "./keys.json";
 
 export class Keyboard {
   container;
+  charKeysArr = [];
   keysArr = [];
 
   constructor() {
@@ -12,32 +13,30 @@ export class Keyboard {
     keys.forEach((e) => {
       let key = new Key(e);
       if (e.type === "char") {
-        this.keysArr.push(key);
+        this.charKeysArr.push(key);
       }
+      this.keysArr.push(key);
       this.container.append(key.container);
     });
   }
 
   changeNames(isCaps, lang) {
-    this.keysArr.forEach((e) => {
+    this.charKeysArr.forEach((e) => {
       if (lang === "eng") {
         isCaps && e.obj.onShift
           ? (e.text.textContent = e.obj.onShift)
           : (e.text.textContent = e.obj.key);
-      } else if (isCaps) {
-        e.obj.langOnShift
-          ? (e.text.textContent = e.obj.langOnShift)
-          : (e.text.textContent = e.obj.onShift);
       } else {
-        e.obj.lang
-          ? (e.text.textContent = e.obj.lang)
-          : (e.text.textContent = e.obj.key);
+        if (isCaps) {
+          e.obj.langOnShift
+            ? (e.text.textContent = e.obj.langOnShift)
+            : (e.text.textContent = e.obj.onShift);
+        } else {
+          e.obj.lang
+            ? (e.text.textContent = e.obj.lang)
+            : (e.text.textContent = e.obj.key);
+        }
       }
-      // if (isCaps) {
-      //   if (e.obj.onShift) e.text.textContent = e.obj.onShift;
-      // } else {
-      //   e.text.textContent = e.obj.key;
-      // }
     });
   }
 }
