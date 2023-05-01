@@ -1,56 +1,56 @@
-const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const CopyPlugin = require("copy-webpack-plugin");
+const path = require('path')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const CopyPlugin = require('copy-webpack-plugin')
 
 module.exports = {
-  mode: "development",
-  devtool: "inline-source-map",
-  entry: path.join(__dirname, "../src/", "index.js"),
+  mode: 'development',
+  devtool: 'inline-source-map',
+  entry: path.join(__dirname, '../src/', 'index.js'),
   output: {
-    filename: "[name].js",
-    path: path.join(__dirname, "../build"),
-    publicPath: "/",
+    filename: '[name].js',
+    path: path.join(__dirname, '../build'),
+    publicPath: '/',
   },
   resolve: {
-    extensions: [".js"],
+    extensions: ['.js'],
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.join(__dirname, "../src/", "index.html"),
-      filename: "index.html",
-      chunks: ["main"],
-      favicon: "./assets/icons/favicon.ico",
+      template: path.join(__dirname, '../src/', 'index.html'),
+      filename: 'index.html',
+      chunks: ['main'],
+      favicon: './assets/icons/favicon.ico',
     }),
     new MiniCssExtractPlugin(),
     new CopyPlugin({
-      patterns: [path.join(__dirname, "../assets/icons/favicon.ico")],
+      patterns: [path.join(__dirname, '../assets/icons/favicon.ico')],
     }),
   ],
   module: {
     rules: [
       {
         test: /\.css$/i,
-        use: [MiniCssExtractPlugin.loader, "css-loader"],
+        use: [MiniCssExtractPlugin.loader, 'css-loader'],
       },
       {
         test: /\.s[ac]ss$/i,
-        use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
       },
       {
         test: /\.(png|jpg|jpeg|gif)$/i,
-        type: "asset/resource",
+        type: 'asset/resource',
         generator: {
-          filename: path.join("images", "[name].[ext]"),
+          filename: path.join('images', '[name].[ext]'),
         },
       },
       {
         test: /\.svg$/,
-        type: "asset/resource",
+        type: 'asset/resource',
         generator: {
-          filename: path.join("icons", "[name].[ext]"),
+          filename: path.join('icons', '[name].[ext]'),
         },
       },
     ],
   },
-};
+}

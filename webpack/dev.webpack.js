@@ -1,4 +1,4 @@
-const base = require("./base.webpack.js");
+const base = require('./base.webpack.js')
 
 module.exports = {
   ...base,
@@ -8,4 +8,4 @@ module.exports = {
     historyApiFallback: true,
     hot: true,
   },
-};
+}
