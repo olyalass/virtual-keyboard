@@ -24,7 +24,11 @@ export default class Textarea {
       } else if (isCaps) {
         if (keyInfo.langOnShift) {
           key = keyInfo.langOnShift
-        } else key = keyInfo.onShift
+        } else if (keyInfo.onShift) {
+          key = keyInfo.onShift
+        } else if (keyInfo.lang) {
+          key = keyInfo.land
+        } else key = keyInfo.key
       } else if (keyInfo.lang) {
         key = keyInfo.lang
       } else key = keyInfo.key

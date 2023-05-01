@@ -45,8 +45,7 @@ export default class App {
         ) {
           event.preventDefault()
           this.changeLang()
-        }
-        if (event.code !== 'ArrowUp' && event.code !== 'ArrowDown') {
+        } else if (event.key) {
           event.preventDefault()
           this.onVirtualKey(virtualKey.isCaps, virtualKey.obj)
         }
