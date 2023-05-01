@@ -19,6 +19,8 @@ export class Footer {
     this.croat.classList.add("footer__span");
     this.croat.textContent = "HR/SRB";
     text.append(this.eng, this.croat);
+    const prevLang = localStorage.getItem("lang");
+    prevLang ? (this.lang = prevLang) : (this.lang = "eng");
     this.lang !== "eng"
       ? this.croat.classList.add("footer__span_selected")
       : this.eng.classList.add("footer__span_selected");

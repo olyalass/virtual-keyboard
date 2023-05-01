@@ -18,6 +18,8 @@ export class Keyboard {
       this.keysArr.push(key);
       this.container.append(key.container);
     });
+    const lang = localStorage.getItem("lang");
+    if (lang !== "eng") this.changeNames(false, lang);
   }
 
   changeNames(isCaps, lang) {

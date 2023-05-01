@@ -15,7 +15,8 @@ export class App {
   constructor() {
     this.container = document.createElement("div");
     this.container.classList.add("app");
-    this.lang = "eng";
+    const prevLang = localStorage.getItem("lang");
+    prevLang ? (this.lang = prevLang) : (this.lang = "eng");
 
     const header = new Header();
     this.footer = new Footer();
@@ -94,6 +95,7 @@ export class App {
     this.lang === "eng" ? (this.lang = "hr") : (this.lang = "eng");
     this.footer.onLangChange(this.lang);
     this.keyboard.changeNames(this.isCaps, this.lang);
+    localStorage.setItem("lang", this.lang);
   }
 
   onVirtualKey(isCaps, obj) {
