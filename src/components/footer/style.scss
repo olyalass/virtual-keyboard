@@ -3,7 +3,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
-  width: 100vw;
+  width: 100%;
   box-sizing: border-box;
 
   &__text {
@@ -14,8 +14,9 @@
     text-decoration: none;
   }
 
-  &__link {
-    text-decoration: none;
-    color: rgba($color: #ffffff, $alpha: 0.7);
+  &__span {
+    &_selected {
+      text-shadow: 0px 0px 3px white;
+    }
   }
 }

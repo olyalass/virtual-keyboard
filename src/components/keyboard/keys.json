@@ -92,7 +92,6 @@
   {
     "code": "Backspace",
     "type": "event",
-    "key": "\b",
     "size": 3,
     "name": "⟵"
   },
@@ -267,7 +266,7 @@
   {
     "code": "Enter",
     "type": "event",
-    "key": "/n",
+    "key": "\n",
     "size": 3
   },
   {

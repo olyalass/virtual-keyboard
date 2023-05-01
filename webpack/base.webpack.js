@@ -6,7 +6,7 @@ const CopyPlugin = require("copy-webpack-plugin");
 module.exports = {
   mode: "development",
   devtool: "inline-source-map",
-  entry: path.join(__dirname, "../src/", "app.js"),
+  entry: path.join(__dirname, "../src/", "index.js"),
   output: {
     filename: "[name].js",
     path: path.join(__dirname, "../build"),
@@ -24,9 +24,7 @@ module.exports = {
     }),
     new MiniCssExtractPlugin(),
     new CopyPlugin({
-      patterns: [
-        path.join(__dirname, "../assets/icons/favicon.ico")
-      ],
+      patterns: [path.join(__dirname, "../assets/icons/favicon.ico")],
     }),
   ],
   module: {

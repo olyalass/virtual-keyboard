@@ -4,16 +4,32 @@ import { Keyboard } from "./components/keyboard";
 import { Header } from "./components/header";
 import { Footer } from "./components/footer";
 
-const root = document.querySelector("body");
-root.classList.add("app");
+export class App {
+  container;
+  isCaps;
 
-const header = new Header();
-const footer = new Footer();
+  constructor() {
+    this.container = document.createElement("div");
+    this.container.classList.add("app");
 
-const container = document.createElement("main");
-container.classList.add("app__container");
+    const header = new Header();
+    const footer = new Footer();
 
-const textarea = new Textarea();
-const keyboard = new Keyboard();
+    const textarea = new Textarea();
+    const keyboard = new Keyboard();
 
-root.append(header.item, textarea.container, keyboard.container, footer.item);
+    this.container.append(
+      header.item,
+      textarea.container,
+      keyboard.container,
+      footer.item
+    );
+
+    this.container.addEventListener("custom-key", (e) => {
+      if (e.detail.isCaps !== undefined) {
+        this.isCaps = e.detail.isCaps;
+      }
+      textarea.addChar(e.detail.obj, this.isCaps);
+    });
+  }
+}
