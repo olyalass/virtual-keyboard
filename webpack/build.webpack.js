@@ -6,6 +6,6 @@ module.exports = {
   output: {
     filename: '[name].js',
     path: path.join(__dirname, '../build'),
-    publicPath: '/shelter/build/',
+    publicPath: '/virtual-keyboard/build/',
   },
 }
