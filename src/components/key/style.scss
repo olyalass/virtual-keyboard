@@ -183,6 +183,7 @@
     }
 
     &_event {
+      text-transform: lowercase;
       background: conic-gradient(
         at 50% 20px,
         var(--side-main-color-event) 0deg 55deg,
@@ -396,7 +397,7 @@
         );
       }
 
-      &:hover {
+      &.key__container_clicked {
         background: conic-gradient(
           at 50% 20px,
           var(--side-main-color-arrow-hover) 0deg 45deg,

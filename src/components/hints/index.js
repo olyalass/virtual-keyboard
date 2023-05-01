@@ -12,8 +12,8 @@ export class Hints {
     const list = document.createElement("ul");
     list.textContent = "Change language:";
     list.classList.add("hints__list");
-    this.createListItem("For Mac: ", "⌘ Command + ⎵ Space", list);
-    this.createListItem("For Windows: ", "⎇ Alt + ⇧ Shift", list);
+    this.createListItem("For Mac: ", "Control + ⌘ Command", list);
+    this.createListItem("For Windows: ", "⇧ Shift + ⎵ Space", list);
     const text = document.createElement("p");
     text.classList.add("hints__text");
     text.textContent = "Keyboard was made on Mac OS";

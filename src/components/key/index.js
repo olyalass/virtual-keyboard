@@ -4,21 +4,24 @@ import "./style.scss";
 export class Key {
   container;
   face;
+  text;
   isCaps;
+  obj;
 
   constructor(keyObj) {
+    this.obj = keyObj;
     this.container = document.createElement("div");
     this.container.classList.add("key__container");
     this.face = document.createElement("div");
     this.face.classList.add("key__face");
-    const text = document.createElement("p");
-    text.classList.add("key__text");
+    this.text = document.createElement("p");
+    this.text.classList.add("key__text");
     keyObj.type === "char"
-      ? (text.textContent = keyObj.key)
+      ? (this.text.textContent = keyObj.key)
       : keyObj.name !== undefined
-      ? (text.textContent = keyObj.name)
-      : (text.textContent = keyObj.code);
-    this.face.append(text);
+      ? (this.text.textContent = keyObj.name)
+      : (this.text.textContent = keyObj.code);
+    this.face.append(this.text);
     if (keyObj.size) {
       keyObj.size === 2
         ? this.container.classList.add("key__container_s")
@@ -39,6 +42,7 @@ export class Key {
 
     this.container.addEventListener("click", () => {
       this.container.classList.add("key__container_clicked");
+      this.container.classList.add("key__face_clicked");
       if (keyObj.code === "CapsLock") {
         this.setOnMode();
       }
@@ -49,6 +53,7 @@ export class Key {
       this.container.dispatchEvent(event);
       setTimeout(() => {
         this.container.classList.remove("key__container_clicked");
+        this.container.classList.remove("key__face_clicked");
       }, 300);
     });
   }
