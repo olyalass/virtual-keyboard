@@ -1,0 +1,405 @@
+[
+  {
+    "code": "Backquote",
+    "key": "`",
+    "type": "char",
+    "onShift": "~",
+    "lang": "¨",
+    "langOnShift": "¸"
+  },
+  {
+    "code": "Digit1",
+    "key": "1",
+    "type": "char",
+    "onShift": "!"
+  },
+  {
+    "code": "Digit2",
+    "key": "2",
+    "type": "char",
+    "onShift": "@",
+    "langOnShift": "\""
+  },
+  {
+    "code": "Digit3",
+    "key": "3",
+    "type": "char",
+    "onShift": "#"
+  },
+  {
+    "code": "Digit4",
+    "key": "4",
+    "type": "char",
+    "onShift": "$"
+  },
+  {
+    "code": "Digit5",
+    "key": "5",
+    "type": "char",
+    "onShift": "%"
+  },
+  {
+    "code": "Digit6",
+    "key": "6",
+    "type": "char",
+    "onShift": "^",
+    "langOnShift": "&"
+  },
+  {
+    "code": "Digit7",
+    "key": "7",
+    "type": "char",
+    "onShift": "&",
+    "langOnShift": "/"
+  },
+  {
+    "code": "Digit8",
+    "key": "8",
+    "type": "char",
+    "onShift": "*",
+    "langOnShift": "("
+  },
+  {
+    "code": "Digit9",
+    "key": "9",
+    "type": "char",
+    "onShift": "(",
+    "langOnShift": ")"
+  },
+  {
+    "code": "Digit0",
+    "key": "0",
+    "type": "char",
+    "onShift": ")",
+    "langOnShift": "="
+  },
+  {
+    "code": "Minus",
+    "key": "-",
+    "type": "char",
+    "onShift": "_",
+    "lang": "'",
+    "langOnShift": "?"
+  },
+  {
+    "code": "Equal",
+    "key": "=",
+    "type": "char",
+    "onShift": "+",
+    "lang": "+",
+    "langOnShift": "*"
+  },
+  {
+    "code": "Backspace",
+    "type": "event",
+    "size": 3,
+    "name": "⟵"
+  },
+  {
+    "code": "Tab",
+    "type": "event",
+    "key": "\t",
+    "size": 2
+  },
+  {
+    "code": "KeyQ",
+    "key": "q",
+    "type": "char",
+    "onShift": "Q"
+  },
+  {
+    "code": "KeyW",
+    "key": "w",
+    "type": "char",
+    "onShift": "W"
+  },
+  {
+    "code": "KeyE",
+    "key": "e",
+    "type": "char",
+    "onShift": "E"
+  },
+  {
+    "code": "KeyR",
+    "key": "r",
+    "type": "char",
+    "onShift": "R"
+  },
+  {
+    "code": "KeyT",
+    "key": "t",
+    "type": "char",
+    "onShift": "T"
+  },
+  {
+    "code": "KeyY",
+    "key": "y",
+    "type": "char",
+    "onShift": "Y",
+    "lang": "z",
+    "langOnShift": "Z"
+  },
+  {
+    "code": "KeyU",
+    "key": "u",
+    "type": "char",
+    "onShift": "U"
+  },
+  {
+    "code": "KeyI",
+    "key": "i",
+    "type": "char",
+    "onShift": "I"
+  },
+  {
+    "code": "KeyO",
+    "key": "o",
+    "type": "char",
+    "onShift": "O"
+  },
+  {
+    "code": "KeyP",
+    "key": "p",
+    "type": "char",
+    "onShift": "P"
+  },
+  {
+    "code": "BracketLeft",
+    "key": "[",
+    "type": "char",
+    "onShift": "{",
+    "lang": "š",
+    "langOnShift": "Š"
+  },
+  {
+    "code": "BracketRight",
+    "key": "]",
+    "type": "char",
+    "onShift": "}",
+    "lang": "đ",
+    "langOnShift": "Đ"
+  },
+  {
+    "code": "Backslash",
+    "key": "\\",
+    "type": "char",
+    "onShift": "|",
+    "lang": "ž",
+    "langOnShift": "Ž",
+    "size": 2
+  },
+  {
+    "code": "CapsLock",
+    "type": "event",
+    "size": 3
+  },
+  {
+    "code": "KeyA",
+    "key": "a",
+    "type": "char",
+    "onShift": "A"
+  },
+  {
+    "code": "KeyS",
+    "key": "s",
+    "type": "char",
+    "onShift": "S"
+  },
+  {
+    "code": "KeyD",
+    "key": "d",
+    "type": "char",
+    "onShift": "D"
+  },
+  {
+    "code": "KeyF",
+    "key": "f",
+    "type": "char",
+    "onShift": "F"
+  },
+  {
+    "code": "KeyG",
+    "key": "g",
+    "type": "char",
+    "onShift": "G"
+  },
+  {
+    "code": "KeyH",
+    "key": "h",
+    "type": "char",
+    "onShift": "H"
+  },
+  {
+    "code": "KeyJ",
+    "key": "j",
+    "type": "char",
+    "onShift": "J"
+  },
+  {
+    "code": "KeyK",
+    "key": "k",
+    "type": "char",
+    "onShift": "K"
+  },
+  {
+    "code": "KeyL",
+    "key": "l",
+    "type": "char",
+    "onShift": "L"
+  },
+  {
+    "code": "Semicolon",
+    "key": ";",
+    "type": "char",
+    "onShift": ":",
+    "lang": "č",
+    "langOnShift": "Č"
+  },
+  {
+    "code": "Quote",
+    "key": "'",
+    "type": "char",
+    "onShift": "\"",
+    "lang": "č",
+    "langOnShift": "Č"
+  },
+  {
+    "code": "Enter",
+    "type": "event",
+    "key": "\n",
+    "size": 3
+  },
+  {
+    "code": "ShiftLeft",
+    "type": "event",
+    "name": "shift",
+    "size": 4
+  },
+  {
+    "code": "KeyZ",
+    "key": "z",
+    "type": "char",
+    "onShift": "Z",
+    "lang": "y",
+    "langOnShift": "Y"
+  },
+  {
+    "code": "KeyX",
+    "key": "x",
+    "type": "char",
+    "onShift": "X"
+  },
+  {
+    "code": "KeyC",
+    "key": "c",
+    "type": "char",
+    "onShift": "C"
+  },
+  {
+    "code": "KeyV",
+    "key": "v",
+    "type": "char",
+    "onShift": "V"
+  },
+  {
+    "code": "KeyB",
+    "key": "b",
+    "type": "char",
+    "onShift": "B"
+  },
+  {
+    "code": "KeyN",
+    "key": "n",
+    "type": "char",
+    "onShift": "N"
+  },
+  {
+    "code": "KeyM",
+    "key": "m",
+    "type": "char",
+    "onShift": "M"
+  },
+  {
+    "code": "Comma",
+    "key": ",",
+    "type": "char",
+    "onShift": "<",
+    "langOnShift": ";"
+  },
+  {
+    "code": "Period",
+    "key": ".",
+    "type": "char",
+    "onShift": ">",
+    "langOnShift": ":"
+  },
+  {
+    "code": "Slash",
+    "key": "/",
+    "type": "char",
+    "onShift": "?",
+    "lang": "-",
+    "langOnShift": "_"
+  },
+  {
+    "code": "ArrowUp",
+    "type": "event",
+    "name": "⇧",
+    "isArrow": true
+  },
+  {
+    "code": "Delete",
+    "type": "event",
+    "name": "del",
+    "size": 2
+  },
+  {
+    "code": "ControlLeft",
+    "type": "event",
+    "name": "ctrl",
+    "size": 1
+  },
+  {
+    "code": "AltLeft",
+    "type": "event",
+    "name": "alt",
+    "size": 1
+  },
+  {
+    "code": "MetaLeft",
+    "type": "event",
+    "name": "⌘",
+    "size": 1
+  },
+  {
+    "code": "Space",
+    "type": "event",
+    "key": " ",
+    "name": "",
+    "size": 5
+  },
+  {
+    "code": "MetaRight",
+    "type": "event",
+    "name": "⌘",
+    "size": 1
+  },
+  {
+    "code": "ArrowLeft",
+    "type": "event",
+    "name": "⇦",
+    "isArrow": true
+  },
+  {
+    "code": "ArrowDown",
+    "type": "event",
+    "name": "⇩",
+    "isArrow": true
+  },
+  {
+    "code": "ArrowRight",
+    "type": "event",
+    "name": "⇨",
+    "isArrow": true
+  }
+]
