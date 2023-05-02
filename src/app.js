@@ -28,6 +28,13 @@ export default class App {
 
     this.container.addEventListener('custom-key', e => {
       this.onVirtualKey(e.detail.isCaps, e.detail.obj)
+      this.textarea.input.focus()
+    })
+
+    this.container.addEventListener('shift-down', e => {
+      this.isCaps = !this.isCaps
+      this.keyboard.changeNames(this.isCaps, this.lang)
+      this.textarea.input.focus()
     })
 
     document.addEventListener('keydown', event => {
@@ -51,6 +58,7 @@ export default class App {
         }
         if (event.code === 'CapsLock') {
           virtualKey.container.click()
+          this.onVirtualKey(true, virtualKey.obj)
         }
         if (event.code === 'ShiftLeft' || event.code === 'ShiftRight') {
           if (this.isCaps) {
@@ -73,6 +81,7 @@ export default class App {
         virtualKey.container.classList.remove('key__container_clicked')
         if (event.code === 'CapsLock') {
           virtualKey.container.click()
+          this.onVirtualKey(false, virtualKey.obj)
         }
         if (event.code === 'ShiftLeft' || event.code === 'ShiftRight') {
           if (this.isCaps) {

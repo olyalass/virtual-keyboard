@@ -39,9 +39,7 @@ export default class Key {
       } else this.container.classList.add('key__container_event')
     }
 
-    this.container.addEventListener('mousedown', () => {
-      this.container.classList.add('key__container_clicked')
-      this.container.classList.add('key__face_clicked')
+    this.container.addEventListener('click', () => {
       if (keyObj.code === 'CapsLock') {
         this.setOnMode()
       }
@@ -51,7 +49,15 @@ export default class Key {
       })
       this.container.dispatchEvent(event)
     })
+
+    this.container.addEventListener('mousedown', () => {
+      this.container.classList.add('key__container_clicked')
+      this.container.classList.add('key__face_clicked')
+      this.toggleShift(keyObj)
+    })
+
     this.container.addEventListener('mouseup', () => {
+      this.toggleShift(keyObj)
       setTimeout(() => {
         this.container.classList.remove('key__container_clicked')
         this.container.classList.remove('key__face_clicked')
@@ -64,5 +70,15 @@ export default class Key {
     if (this.isCaps) {
       this.isCaps = false
     } else this.isCaps = true
+  }
+
+  toggleShift(keyObj) {
+    if (keyObj.code === 'ShiftLeft') {
+      const event = new CustomEvent('shift-down', {
+        bubbles: true,
+        detail: { obj: keyObj },
+      })
+      this.container.dispatchEvent(event)
+    }
   }
 }

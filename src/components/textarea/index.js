@@ -46,8 +46,6 @@ export default class Textarea {
         this.setCursorDown()
       }
 
-      this.setFocus()
-
       if (keyInfo.code === 'Backspace') {
         this.input.value =
           this.input.value.slice(0, this.cursor - 1) +
@@ -63,6 +61,8 @@ export default class Textarea {
         this.moveCursor('right')
       }
     }
+
+    this.setFocus()
   }
 
   setCursorUp() {
