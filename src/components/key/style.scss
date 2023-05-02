@@ -31,15 +31,15 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 5px;
-    width: 50px;
-    height: 50px;
+    padding-top: 0.2vw;
+    width: 2.8vw;
+    height: 2.8vw;
     font-family: "Cutive Mono";
-    font-size: 1.15em;
+    font-size: 1.1vw;
     background-color: #313927;
     box-shadow: 5px 5px 1px black;
     background: conic-gradient(
-      at 50% 20px,
+      at 50% 1vw,
       var(--side-main-color) 0deg 45deg,
       var(--side-main-color) 45deg,
       var(--side-light-color) 55deg,
@@ -54,8 +54,8 @@
       var(--side-light-color) 305deg,
       var(--side-main-color) 315deg
     );
-    border-radius: 5px;
-    border: 2px solid var(--border-color);
+    border-radius: 10%;
+    border: 0.1vw solid var(--border-color);
     cursor: pointer;
 
     &_clicked {
@@ -94,15 +94,15 @@
     }
 
     &_xs {
-      width: 70px;
+      width: 3.95vw;
 
       .key__face {
-        width: 60px;
+        width: 3.5vw;
       }
     }
 
     &_s {
-      width: 80px;
+      width: 4.5vw;
       background: conic-gradient(
         at 50% 20px,
         var(--side-main-color) 0deg 60deg,
@@ -178,7 +178,7 @@
       }
 
       .key__face {
-        width: 70px;
+        width: 4vw;
       }
     }
 
@@ -240,7 +240,7 @@
       }
 
       &_m {
-        width: 107px;
+        width: 5.85vw;
         background: conic-gradient(
           at 50% 20px,
           var(--side-main-color-event) 0deg 68deg,
@@ -278,12 +278,12 @@
         }
 
         .key__face {
-          width: 97px;
+          width: 5.5vw;
         }
       }
 
       &_l {
-        width: 134px;
+        width: 7.3vw;
         background: conic-gradient(
           at 50% 20px,
           var(--side-main-color-event) 0deg 72deg,
@@ -321,12 +321,12 @@
         }
 
         .key__face {
-          width: 124px;
+          width: 6.8vw;
         }
       }
 
       &_xl {
-        width: 294px;
+        width: 16.2vw;
         background: conic-gradient(
           at 50% 20px,
           var(--side-main-color-event) 0deg 82deg,
@@ -364,7 +364,7 @@
         }
 
         .key__face {
-          width: 284px;
+          width: 15.8vw;
         }
       }
     }
@@ -429,11 +429,11 @@
 
   &__face {
     color: #1a360f;
-    width: 40px;
-    height: 40px;
-    border-radius: 5px;
+    width: 2.3vw;
+    height: 2.3vw;
+    border-radius: 10%;
     text-align: center;
-    padding: 5px 0 0;
+    padding: 0.5vw 0 0;
     background: linear-gradient(
       to right,
       var(--face-shadow-color),
