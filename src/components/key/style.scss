@@ -1,0 +1,466 @@
+:root {
+  --border-color: #1a1e15;
+  --face-main-color: #818050;
+  --face-shadow-color: #717146;
+  --side-main-color: #3e4831;
+  --side-light-color: #505d3f;
+  --face-main-color-hover: #64643e;
+  --face-shadow-color-hover: #565635;
+  --side-main-color-hover: #313927;
+  --side-light-color-hover: #414b33;
+  --face-main-color-event: #393939;
+  --face-main-color-event-hover: #222222;
+  --face-shadow-color-event: #323232;
+  --face-shadow-color-event-hover: #202020;
+  --side-main-color-event: #181818;
+  --side-main-color-event-hover: #141414;
+  --side-light-color-event: #2a2a2a;
+  --side-light-color-event-hover: #232323;
+  --face-main-color-arrow: #d99929;
+  --face-shadow-color-arrow: #cf8d1a;
+  --side-main-color-arrow: #835212;
+  --side-light-color-arrow: #9f630e;
+  --face-main-color-arrow-hover: #b78021;
+  --face-shadow-color-arrow-hover: #a87111;
+  --side-main-color-arrow-hover: #643e0d;
+  --side-light-color-arrow-hover: #7e500e;
+}
+
+.key {
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 0.2vw;
+    width: 2.8vw;
+    height: 2.8vw;
+    font-family: "Cutive Mono";
+    font-size: 1.1vw;
+    background-color: #313927;
+    box-shadow: 5px 5px 1px black;
+    background: conic-gradient(
+      at 50% 1vw,
+      var(--side-main-color) 0deg 45deg,
+      var(--side-main-color) 45deg,
+      var(--side-light-color) 55deg,
+      var(--side-main-color) 65deg 130deg,
+      var(--side-main-color) 130deg,
+      var(--side-light-color) 141deg,
+      var(--side-main-color) 151deg 207deg,
+      var(--side-main-color) 207deg,
+      var(--side-light-color) 218deg,
+      var(--side-main-color) 227deg 290deg,
+      var(--side-main-color) 290deg,
+      var(--side-light-color) 305deg,
+      var(--side-main-color) 315deg
+    );
+    border-radius: 10%;
+    border: 0.1vw solid var(--border-color);
+    cursor: pointer;
+
+    &_clicked {
+      background: conic-gradient(
+        at 50% 20px,
+        var(--side-main-color-hover) 0deg 45deg,
+        var(--side-main-color-hover) 45deg,
+        var(--side-light-color-hover) 55deg,
+        var(--side-main-color-hover) 65deg 130deg,
+        var(--side-main-color-hover) 130deg,
+        var(--side-light-color-hover) 141deg,
+        var(--side-main-color-hover) 151deg 207deg,
+        var(--side-main-color-hover) 207deg,
+        var(--side-light-color-hover) 218deg,
+        var(--side-main-color-hover) 227deg 290deg,
+        var(--side-main-color-hover) 290deg,
+        var(--side-light-color-hover) 305deg,
+        var(--side-main-color-hover) 315deg
+      );
+      box-shadow: white 1px 1px 5px;
+      .key__face {
+        color: white !important;
+        text-shadow: white 1px 1px 3px;
+        background: linear-gradient(
+          to right,
+          var(--face-shadow-color-hover),
+          var(--face-main-color-hover) 35%,
+          var(--face-shadow-color-hover) 90%
+        );
+        transform: scale(0.97, 0.97);
+      }
+
+      .key__text {
+        transform: scale(0.97, 0.97);
+      }
+    }
+
+    &_xs {
+      width: 3.95vw;
+
+      .key__face {
+        width: 3.5vw;
+      }
+    }
+
+    &_s {
+      width: 4.5vw;
+      background: conic-gradient(
+        at 50% 20px,
+        var(--side-main-color) 0deg 60deg,
+        var(--side-main-color) 60deg,
+        var(--side-light-color) 70deg,
+        var(--side-main-color) 80deg 115deg,
+        var(--side-main-color) 115deg,
+        var(--side-light-color) 125deg,
+        var(--side-main-color) 135deg 225deg,
+        var(--side-main-color) 225deg,
+        var(--side-light-color) 235deg,
+        var(--side-main-color) 245deg 280deg,
+        var(--side-main-color) 280deg,
+        var(--side-light-color) 290deg,
+        var(--side-main-color) 300deg
+      );
+
+      &.key__container_event {
+        background: conic-gradient(
+          at 50% 20px,
+          var(--side-main-color-event) 0deg 60deg,
+          var(--side-main-color-event) 60deg,
+          var(--side-light-color-event) 70deg,
+          var(--side-main-color-event) 80deg 115deg,
+          var(--side-main-color-event) 115deg,
+          var(--side-light-color-event) 125deg,
+          var(--side-main-color-event) 135deg 225deg,
+          var(--side-main-color-event) 225deg,
+          var(--side-light-color-event) 235deg,
+          var(--side-main-color-event) 245deg 280deg,
+          var(--side-main-color-event) 280deg,
+          var(--side-light-color-event) 290deg,
+          var(--side-main-color-event) 300deg
+        );
+      }
+
+      &_clicked {
+        background: conic-gradient(
+          at 50% 20px,
+          var(--side-main-color-hover) 0deg 60deg,
+          var(--side-main-color-hover) 60deg,
+          var(--side-light-color-hover) 70deg,
+          var(--side-main-color-hover) 80deg 115deg,
+          var(--side-main-color-hover) 115deg,
+          var(--side-light-color-hover) 125deg,
+          var(--side-main-color-hover) 135deg 225deg,
+          var(--side-main-color-hover) 225deg,
+          var(--side-light-color-hover) 235deg,
+          var(--side-main-color-hover) 245deg 280deg,
+          var(--side-main-color-hover) 280deg,
+          var(--side-light-color-hover) 290deg,
+          var(--side-main-color-hover) 300deg
+        );
+
+        &.key__container_event {
+          background: conic-gradient(
+            at 50% 20px,
+            var(--side-main-color-event-hover) 0deg 60deg,
+            var(--side-main-color-event-hover) 60deg,
+            var(--side-light-color-event-hover) 70deg,
+            var(--side-main-color-event-hover) 80deg 115deg,
+            var(--side-main-color-event-hover) 115deg,
+            var(--side-light-color-event-hover) 125deg,
+            var(--side-main-color-event-hover) 135deg 225deg,
+            var(--side-main-color-event-hover) 225deg,
+            var(--side-light-color-event-hover) 235deg,
+            var(--side-main-color-event-hover) 245deg 280deg,
+            var(--side-main-color-event-hover) 280deg,
+            var(--side-light-color-event-hover) 290deg,
+            var(--side-main-color-event-hover) 300deg
+          );
+        }
+      }
+
+      .key__face {
+        width: 4vw;
+      }
+    }
+
+    &_event {
+      text-transform: lowercase;
+      background: conic-gradient(
+        at 50% 20px,
+        var(--side-main-color-event) 0deg 55deg,
+        var(--side-main-color-event) 55deg,
+        var(--side-light-color-event) 65deg,
+        var(--side-main-color-event) 75deg 120deg,
+        var(--side-main-color-event) 120deg,
+        var(--side-light-color-event) 130deg,
+        var(--side-main-color-event) 141deg 220deg,
+        var(--side-main-color-event) 220deg,
+        var(--side-light-color-event) 230deg,
+        var(--side-main-color-event) 240deg 285deg,
+        var(--side-main-color-event) 285deg,
+        var(--side-light-color-event) 295deg,
+        var(--side-main-color-event) 305deg
+      );
+
+      .key__face {
+        color: rgb(25, 25, 25);
+        background: linear-gradient(
+          to right,
+          var(--face-shadow-color-event),
+          var(--face-main-color-event) 35%,
+          var(--face-shadow-color-event) 90%
+        );
+      }
+
+      &_clicked {
+        background: conic-gradient(
+          at 50% 20px,
+          var(--side-main-color-event-hover) 0deg 55deg,
+          var(--side-main-color-event-hover) 55deg,
+          var(--side-light-color-event-hover) 65deg,
+          var(--side-main-color-event-hover) 75deg 120deg,
+          var(--side-main-color-event-hover) 120deg,
+          var(--side-light-color-event-hover) 130deg,
+          var(--side-main-color-event-hover) 141deg 220deg,
+          var(--side-main-color-event-hover) 220deg,
+          var(--side-light-color-event-hover) 230deg,
+          var(--side-main-color-event-hover) 240deg 285deg,
+          var(--side-main-color-event-hover) 285deg,
+          var(--side-light-color-event-hover) 295deg,
+          var(--side-main-color-event-hover) 305deg
+        );
+
+        .key__face {
+          background: linear-gradient(
+            to right,
+            var(--face-shadow-color-event-hover),
+            var(--face-main-color-event-hover) 35%,
+            var(--face-shadow-color-event-hover) 90%
+          );
+        }
+      }
+
+      &_m {
+        width: 5.85vw;
+        background: conic-gradient(
+          at 50% 20px,
+          var(--side-main-color-event) 0deg 68deg,
+          var(--side-main-color-event) 68deg,
+          var(--side-light-color-event) 73deg,
+          var(--side-main-color-event) 80deg 110deg,
+          var(--side-main-color-event) 110deg,
+          var(--side-light-color-event) 118deg,
+          var(--side-main-color-event) 123deg 237deg,
+          var(--side-main-color-event) 237deg,
+          var(--side-light-color-event) 242deg,
+          var(--side-main-color-event) 247deg 280deg,
+          var(--side-main-color-event) 280deg,
+          var(--side-light-color-event) 285deg,
+          var(--side-main-color-event) 290deg
+        );
+
+        &_clicked {
+          background: conic-gradient(
+            at 50% 20px,
+            var(--side-main-color-event-hover) 0deg 68deg,
+            var(--side-main-color-event-hover) 68deg,
+            var(--side-light-color-event-hover) 73deg,
+            var(--side-main-color-event-hover) 80deg 110deg,
+            var(--side-main-color-event-hover) 110deg,
+            var(--side-light-color-event-hover) 118deg,
+            var(--side-main-color-event-hover) 123deg 237deg,
+            var(--side-main-color-event-hover) 237deg,
+            var(--side-light-color-event-hover) 242deg,
+            var(--side-main-color-event-hover) 247deg 280deg,
+            var(--side-main-color-event-hover) 280deg,
+            var(--side-light-color-event-hover) 285deg,
+            var(--side-main-color-event-hover) 290deg
+          );
+        }
+
+        .key__face {
+          width: 5.5vw;
+        }
+      }
+
+      &_l {
+        width: 7.3vw;
+        background: conic-gradient(
+          at 50% 20px,
+          var(--side-main-color-event) 0deg 72deg,
+          var(--side-main-color-event) 72deg,
+          var(--side-light-color-event) 77deg,
+          var(--side-main-color-event) 82deg 107deg,
+          var(--side-main-color-event) 107deg,
+          var(--side-light-color-event) 112deg,
+          var(--side-main-color-event) 117deg 242deg,
+          var(--side-main-color-event) 242deg,
+          var(--side-light-color-event) 247deg,
+          var(--side-main-color-event) 252deg 278deg,
+          var(--side-main-color-event) 278deg,
+          var(--side-light-color-event) 283deg,
+          var(--side-main-color-event) 288deg
+        );
+
+        &_clicked {
+          background: conic-gradient(
+            at 50% 20px,
+            var(--side-main-color-event-hover) 0deg 72deg,
+            var(--side-main-color-event-hover) 72deg,
+            var(--side-light-color-event-hover) 77deg,
+            var(--side-main-color-event-hover) 82deg 107deg,
+            var(--side-main-color-event-hover) 107deg,
+            var(--side-light-color-event-hover) 112deg,
+            var(--side-main-color-event-hover) 117deg 242deg,
+            var(--side-main-color-event-hover) 242deg,
+            var(--side-light-color-event-hover) 247deg,
+            var(--side-main-color-event-hover) 252deg 278deg,
+            var(--side-main-color-event-hover) 278deg,
+            var(--side-light-color-event-hover) 283deg,
+            var(--side-main-color-event-hover) 288deg
+          );
+        }
+
+        .key__face {
+          width: 6.8vw;
+        }
+      }
+
+      &_xl {
+        width: 16.2vw;
+        background: conic-gradient(
+          at 50% 20px,
+          var(--side-main-color-event) 0deg 82deg,
+          var(--side-main-color-event) 82deg,
+          var(--side-light-color-event) 84deg,
+          var(--side-main-color-event) 87deg 98deg,
+          var(--side-main-color-event) 98deg,
+          var(--side-light-color-event) 100deg,
+          var(--side-main-color-event) 103deg 257deg,
+          var(--side-main-color-event) 257deg,
+          var(--side-light-color-event) 260deg,
+          var(--side-main-color-event) 263deg 273deg,
+          var(--side-main-color-event) 273deg,
+          var(--side-light-color-event) 276deg,
+          var(--side-main-color-event) 279deg
+        );
+
+        &_clicked {
+          background: conic-gradient(
+            at 50% 20px,
+            var(--side-main-color-event-hover) 0deg 82deg,
+            var(--side-main-color-event-hover) 82deg,
+            var(--side-light-color-event-hover) 84deg,
+            var(--side-main-color-event-hover) 87deg 98deg,
+            var(--side-main-color-event-hover) 98deg,
+            var(--side-light-color-event-hover) 100deg,
+            var(--side-main-color-event-hover) 103deg 257deg,
+            var(--side-main-color-event-hover) 257deg,
+            var(--side-light-color-event-hover) 260deg,
+            var(--side-main-color-event-hover) 263deg 273deg,
+            var(--side-main-color-event-hover) 273deg,
+            var(--side-light-color-event-hover) 276deg,
+            var(--side-main-color-event-hover) 279deg
+          );
+        }
+
+        .key__face {
+          width: 15.8vw;
+        }
+      }
+    }
+
+    &_arrow {
+      background: conic-gradient(
+        at 50% 20px,
+        var(--side-main-color-arrow) 0deg 45deg,
+        var(--side-main-color-arrow) 45deg,
+        var(--side-light-color-arrow) 55deg,
+        var(--side-main-color-arrow) 65deg 130deg,
+        var(--side-main-color-arrow) 130deg,
+        var(--side-light-color-arrow) 141deg,
+        var(--side-main-color-arrow) 151deg 207deg,
+        var(--side-main-color-arrow) 207deg,
+        var(--side-light-color-arrow) 218deg,
+        var(--side-main-color-arrow) 227deg 290deg,
+        var(--side-main-color-arrow) 290deg,
+        var(--side-light-color-arrow) 305deg,
+        var(--side-main-color-arrow) 315deg
+      );
+
+      .key__face {
+        color: #7c5127;
+        background: linear-gradient(
+          to right,
+          var(--face-shadow-color-arrow),
+          var(--face-main-color-arrow) 35%,
+          var(--face-shadow-color-arrow) 90%
+        );
+      }
+
+      &.key__container_clicked {
+        background: conic-gradient(
+          at 50% 20px,
+          var(--side-main-color-arrow-hover) 0deg 45deg,
+          var(--side-main-color-arrow-hover) 45deg,
+          var(--side-light-color-arrow-hover) 55deg,
+          var(--side-main-color-arrow-hover) 65deg 130deg,
+          var(--side-main-color-arrow-hover) 130deg,
+          var(--side-light-color-arrow-hover) 141deg,
+          var(--side-main-color-arrow-hover) 151deg 207deg,
+          var(--side-main-color-arrow-hover) 207deg,
+          var(--side-light-color-arrow-hover) 218deg,
+          var(--side-main-color-arrow-hover) 227deg 290deg,
+          var(--side-main-color-arrow-hover) 290deg,
+          var(--side-light-color-arrow-hover) 305deg,
+          var(--side-main-color-arrow-hover) 315deg
+        );
+
+        .key__face {
+          background: linear-gradient(
+            to right,
+            var(--face-shadow-color-arrow-hover),
+            var(--face-main-color-arrow-hover) 35%,
+            var(--face-shadow-color-arrow-hover) 90%
+          );
+        }
+      }
+    }
+  }
+
+  &__face {
+    color: #1a360f;
+    width: 2.3vw;
+    height: 2.3vw;
+    border-radius: 10%;
+    text-align: center;
+    padding: 0.5vw 0 0;
+    background: linear-gradient(
+      to right,
+      var(--face-shadow-color),
+      var(--face-main-color) 35%,
+      var(--face-shadow-color) 90%
+    );
+    box-sizing: border-box;
+    transition: transform 0.2s;
+    user-select: none;
+
+    &_on {
+      color: white !important;
+      text-shadow: white 1px 1px 3px;
+    }
+  }
+
+  &__text {
+    margin: 0;
+    transition: transform 0.2s;
+  }
+}
+
+@keyframes pressKey {
+  from {
+    transform: scale(1, 1);
+  }
+  to {
+    transform: translate(0.7, 0.7);
+  }
+}

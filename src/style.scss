@@ -1,0 +1,29 @@
+html {
+  font-size: 0.956vw;
+}
+
+body {
+  margin: 0;
+  background-color: black;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-image: url("../assets/images/road.jpg");
+  background-size: auto cover;
+  background-position: top center;
+  background-repeat: no-repeat;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 700px;
+  }
+}

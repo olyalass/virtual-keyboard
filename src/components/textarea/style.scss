@@ -1,0 +1,23 @@
+.textarea {
+  &__input {
+    width: 46vw;
+    height: 10vw;
+    padding: 30px 20px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border: none;
+    overflow-y: scroll;
+    resize: none;
+    outline: none;
+    overflow: auto;
+    border-radius: 5px;
+
+    font-family: "Anonymous Pro";
+    color: rgb(30, 59, 34);
+    font-size: 1em;
+
+    &:focus {
+      outline: none;
+      resize: none;
+    }
+  }
+}
